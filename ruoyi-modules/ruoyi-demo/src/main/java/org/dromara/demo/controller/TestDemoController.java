@@ -1,6 +1,7 @@
 package org.dromara.demo.controller;
 
 import cn.dev33.satoken.annotation.SaCheckPermission;
+import cn.dev33.satoken.annotation.SaIgnore;
 import org.dromara.common.core.domain.R;
 import org.dromara.common.core.utils.MapstructUtils;
 import org.dromara.common.core.utils.ValidatorUtils;
@@ -46,6 +47,13 @@ import java.util.concurrent.TimeUnit;
 public class TestDemoController extends BaseController {
 
     private final ITestDemoService testDemoService;
+
+    @SaIgnore
+    @GetMapping("/demo")
+    public String demo() {
+        System.out.println("demo");
+        return "demo";
+    }
 
     /**
      * 查询测试单表列表

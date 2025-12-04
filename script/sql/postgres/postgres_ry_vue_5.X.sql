@@ -1395,4 +1395,4 @@ create or replace function cast_varchar_to_timestamp(varchar) returns timestampt
 select to_timestamp($1, 'yyyy-mm-dd hh24:mi:ss');
 $$ language sql strict ;
 
-create cast (varchar as timestamptz) with function cast_varchar_to_timestamp as IMPLICIT;
+-- create cast (varchar as timestamptz) with function cast_varchar_to_timestamp as IMPLICIT;
